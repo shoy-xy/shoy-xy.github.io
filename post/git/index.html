@@ -298,18 +298,7 @@ $sudo make install
 <p>安装完成后，还需要最后一步设置，在命令行输入以下两行命令：
 git config &ndash;global user.name &ldquo;Your Name&rdquo;
 git config &ndash;global user.email &ldquo;<a href="mailto:email@example.com">email@example.com</a>&rdquo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git config --global user.name <span style="color:#e6db74">&#34;Liujx&#34;</span>
-
-$ git config --global user.email <span style="color:#e6db74">&#34;liujixia0410@163.com&#34;</span>
-</code></pre></div><p>注意git config命令的&ndash;global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
-<p>另，以上内容记录在&quot;.gitconfig&quot;文件中。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat /c/Users/lenovo/.gitconfig
-<span style="color:#f92672">[</span>user<span style="color:#f92672">]</span>
-        name <span style="color:#f92672">=</span> Liujx
-        email <span style="color:#f92672">=</span> liujixia0410@163.com
-<span style="color:#f92672">[</span>gui<span style="color:#f92672">]</span>
-        recentrepo <span style="color:#f92672">=</span> Z:/Git/learngit
-</code></pre></div><h2 id="三版本库repository管理">三、版本库repository管理</h2>
+<h2 id="三版本库repository管理">三、版本库repository管理</h2>
 <h3 id="31-创建版本库git-init命令">3.1 创建版本库（git init命令）</h3>
 <p>可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
 <ul>
