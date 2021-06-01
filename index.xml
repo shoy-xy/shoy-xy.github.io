@@ -28,6 +28,15 @@ config：部署配置文件；
     </item>
     
     <item>
+      <title>Archives</title>
+      <link>https://shoy-xy.github.io/archives/</link>
+      <pubDate>Mon, 31 May 2021 14:28:55 +0800</pubDate>
+      
+      <guid>https://shoy-xy.github.io/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Git</title>
       <link>https://shoy-xy.github.io/post/git/</link>
       <pubDate>Mon, 31 May 2021 14:26:07 +0800</pubDate>
