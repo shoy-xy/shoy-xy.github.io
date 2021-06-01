@@ -1,64 +1,236 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Nexus</title>
-  <link href="https://shoy-xy.github.io//css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="https://shoy-xy.github.io//css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
-  <style type="text/css">
-  
-    footer.page-footer{background-image: url(https://shoy-xy.github.io//images/default.png);}
-  
-  </style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Nexus | Shoy Hugo Site</title>
+    <meta property="og:title" content="Nexus - Shoy Hugo Site">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-05-31T14:25:52&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-05-31T14:25:52&#43;08:00'>
+        
+    <meta name="Keywords" content="Java">
+    <meta name="description" content="Nexus">
+        
+    <meta name="author" content="Shoy">
+    <meta property="og:url" content="https://shoy-xy.githubio/post/nexus/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
 </head>
+
+
 <body>
-  <ul id="slide-out" class="side-nav">
-    <li><a href="https://shoy-xy.github.io/"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
-    <li><a href="https://shoy-xy.github.io//categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
-    <li><a href="https://shoy-xy.github.io//tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://shoy-xy.githubio/">
+                        Shoy Hugo Site
+                    </a>
+                
+                <p class="description">Java</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://shoy-xy.githubio/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#maven">Maven</a>
+      <ul>
+        <li><a href="#配置">配置</a></li>
+        <li><a href="#下载与部署">下载与部署</a></li>
+        <li><a href="#相关命令">相关命令</a></li>
+        <li><a href="#其他建议">其他建议</a></li>
+      </ul>
+    </li>
+    <li><a href="#npm">Npm</a>
+      <ul>
+        <li><a href="#配置-1">配置</a></li>
+        <li><a href="#下载与部署-1">下载与部署</a></li>
+      </ul>
+    </li>
+    <li><a href="#pypi">Pypi</a>
+      <ul>
+        <li><a href="#配置-2">配置</a></li>
+        <li><a href="#下载与部署-2">下载与部署</a></li>
+        <li><a href="#相关说明">相关说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker">Docker</a>
+      <ul>
+        <li><a href="#配置-3">配置</a></li>
+        <li><a href="#下载与部署-3">下载与部署</a></li>
+        <li><a href="#相关命令-1">相关命令</a></li>
+      </ul>
+    </li>
+    <li><a href="#conda">Conda</a>
+      <ul>
+        <li><a href="#配置-4">配置</a></li>
+        <li><a href="#下载与部署-4">下载与部署</a></li>
+        <li><a href="#相关命令-2">相关命令</a></li>
+      </ul>
+    </li>
+    <li><a href="#nexus配置">nexus配置</a>
+      <ul>
+        <li><a href="#核心概念">核心概念</a></li>
+        <li><a href="#proxy镜像地址https">proxy镜像地址(https)</a></li>
+        <li><a href="#docker配置">docker配置</a></li>
+        <li><a href="#tasks">Tasks</a></li>
+        <li><a href="#2版本到3版本的迁移">2版本到3版本的迁移</a></li>
+      </ul>
+    </li>
   </ul>
-  <div id="index-banner" class="parallax-container">
-  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
-    <div class="section no-pad-bot">
-      <div class="container">
-        
-        <h1 class="header center teal-text text-lighten-2">My New Hugo Site</h1>
-        <div class="row center">
-          <h5 class="header col s12 light"></h5>
-        </div>
-        <div class="row center">
-        
-        
-        
-        
-        
-        
-          <a href="https://shoy-xy.github.io//index.xml"><img src="https://shoy-xy.github.io//images/feed-dreamstale27.png"></a>
-        </div>
-      </div>
+</nav>
     </div>
-    <div class="parallax">
-    
-      <img src="https://shoy-xy.github.io//images/default.png">
-    
-    </div>
-  </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
 
-
-
-<div class="container">
-  <div class="section">
-
-    <div class="row">
-      <div class="col s12">
-        <div class="card-panel">
-          <h4>Nexus</h4>
-          <p>
-           
-          </p>
-          <p><h1 id="nexus-tutorials-222">Nexus tutorials 222</h1>
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Nexus</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年5月31日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3'>工具文档</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <h1 id="nexus-tutorials">Nexus tutorials</h1>
 <ul>
 <li><a href="#nexus-tutorials">Nexus tutorials</a>
 <ul>
@@ -257,47 +429,691 @@
 </tr>
 </tbody>
 </table>
-</p>
-          <p>27 May 2021
-            
-          </p>
-          
+<ul>
+<li>
+<p>方案一：</p>
+<ul>
+<li>
+<p>maven配置文件位置</p>
+<ul>
+<li>${MAVEN_HOME}/conf/settings.xml：所有用户全局生效</li>
+<li>~/.m2/settings.xml：当前登录用户生效</li>
+</ul>
+</li>
+<li>
+<p>servers配置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;servers&gt;</span>
+    <span style="color:#75715e">&lt;!--forbid anonymous executing deployment command,
+</span><span style="color:#75715e">    authentication info is set here --&gt;</span>
+    <span style="color:#f92672">&lt;server&gt;</span>
+        <span style="color:#f92672">&lt;id&gt;</span>dev2-nexus3<span style="color:#f92672">&lt;/id&gt;</span>
+        <span style="color:#f92672">&lt;username&gt;</span>dev2<span style="color:#f92672">&lt;/username&gt;</span>
+        <span style="color:#f92672">&lt;password&gt;</span>Dev2Dev2<span style="color:#f92672">&lt;/password&gt;</span>
+    <span style="color:#f92672">&lt;/server&gt;</span>
+<span style="color:#f92672">&lt;/servers&gt;</span>
+</code></pre></div></li>
+<li>
+<p>mirror配置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;mirrors&gt;</span>
+    <span style="color:#75715e">&lt;!--Send all requests to the public group,
+</span><span style="color:#75715e">    so this mirror should have all the artifact,
+</span><span style="color:#75715e">    we can group all the private repo into public repository --&gt;</span>
+    <span style="color:#f92672">&lt;mirror&gt;</span>
+        <span style="color:#f92672">&lt;id&gt;</span>dev2-nexus3<span style="color:#f92672">&lt;/id&gt;</span>
+        <span style="color:#f92672">&lt;mirrorOf&gt;</span>*<span style="color:#f92672">&lt;/mirrorOf&gt;</span>
+        <span style="color:#f92672">&lt;url&gt;</span>http://172.27.234.197:8082/nexus3/repository/maven-public<span style="color:#f92672">&lt;/url&gt;</span>
+    <span style="color:#f92672">&lt;/mirror&gt;</span>
+<span style="color:#f92672">&lt;/mirrors&gt;</span>
+</code></pre></div></li>
+<li>
+<p>repositories&amp;pluginRepositories</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;profiles&gt;</span>
+    <span style="color:#f92672">&lt;profile&gt;</span>
+        <span style="color:#f92672">&lt;id&gt;</span>dev2-dev<span style="color:#f92672">&lt;/id&gt;</span>
+        <span style="color:#f92672">&lt;repositories&gt;</span>
+            <span style="color:#f92672">&lt;repository&gt;</span>
+                <span style="color:#75715e">&lt;!--should same as  mirrors/mirros/id  --&gt;</span>
+                <span style="color:#f92672">&lt;id&gt;</span>dev2-nexus3<span style="color:#f92672">&lt;/id&gt;</span>
+                <span style="color:#f92672">&lt;url&gt;</span>http://172.27.234.197:8082/nexus3/repository/maven-public<span style="color:#f92672">&lt;/url&gt;</span>
+                <span style="color:#f92672">&lt;releases&gt;</span>
+                    <span style="color:#f92672">&lt;enabled&gt;</span>true<span style="color:#f92672">&lt;/enabled&gt;</span>
+                <span style="color:#f92672">&lt;/releases&gt;</span>
+                <span style="color:#f92672">&lt;snapshots&gt;</span>
+                    <span style="color:#f92672">&lt;enabled&gt;</span>true<span style="color:#f92672">&lt;/enabled&gt;</span>
+                    <span style="color:#f92672">&lt;updatePolicy&gt;</span>always<span style="color:#f92672">&lt;/updatePolicy&gt;</span>
+                <span style="color:#f92672">&lt;/snapshots&gt;</span>
+            <span style="color:#f92672">&lt;/repository&gt;</span>
+        <span style="color:#f92672">&lt;/repositories&gt;</span>
+        <span style="color:#f92672">&lt;pluginRepositories&gt;</span>
+            <span style="color:#f92672">&lt;pluginRepository&gt;</span>
+                <span style="color:#f92672">&lt;id&gt;</span>dev2-nexus3<span style="color:#f92672">&lt;/id&gt;</span>
+                <span style="color:#f92672">&lt;url&gt;</span>http://172.27.234.197:8082/nexus3/repository/maven-public<span style="color:#f92672">&lt;/url&gt;</span>
+                <span style="color:#f92672">&lt;releases&gt;</span>
+                    <span style="color:#f92672">&lt;enabled&gt;</span>true<span style="color:#f92672">&lt;/enabled&gt;</span>
+                <span style="color:#f92672">&lt;/releases&gt;</span>
+                <span style="color:#f92672">&lt;snapshots&gt;</span>
+                    <span style="color:#f92672">&lt;enabled&gt;</span>false<span style="color:#f92672">&lt;/enabled&gt;</span>
+                <span style="color:#f92672">&lt;/snapshots&gt;</span>
+            <span style="color:#f92672">&lt;/pluginRepository&gt;</span>
+        <span style="color:#f92672">&lt;/pluginRepositories&gt;</span>
+    <span style="color:#f92672">&lt;/profile&gt;</span>
+<span style="color:#f92672">&lt;/profiles&gt;</span>
+
+<span style="color:#f92672">&lt;activeProfiles&gt;</span>
+    <span style="color:#75715e">&lt;!--make the profile active all the time --&gt;</span>
+    <span style="color:#f92672">&lt;activeProfile&gt;</span>dev2-dev<span style="color:#f92672">&lt;/activeProfile&gt;</span>
+<span style="color:#f92672">&lt;/activeProfiles&gt;</span>
+</code></pre></div></li>
+<li>
+<p>distributionManagement</p>
+<p>配置文件位置：project-name/pom.xml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;project&gt;</span>
+    ...
+    <span style="color:#f92672">&lt;distributionManagement&gt;</span>
+    <span style="color:#f92672">&lt;repository&gt;</span>
+        <span style="color:#75715e">&lt;!--should same as  servers/server/id in settings.xml --&gt;</span>
+        <span style="color:#f92672">&lt;id&gt;</span>dev2-nexus3<span style="color:#f92672">&lt;/id&gt;</span>
+        <span style="color:#f92672">&lt;name&gt;</span>release repository for deployment<span style="color:#f92672">&lt;/name&gt;</span>
+        <span style="color:#f92672">&lt;url&gt;</span>http://172.27.234.197:8082/nexus3/repository/maven-releases<span style="color:#f92672">&lt;/url&gt;</span>
+    <span style="color:#f92672">&lt;/repository&gt;</span>
+    <span style="color:#f92672">&lt;snapshotRepository&gt;</span>
+        <span style="color:#f92672">&lt;id&gt;</span>dev2-nexus3<span style="color:#f92672">&lt;/id&gt;</span>
+        <span style="color:#f92672">&lt;name&gt;</span>snapshots repository for deployment<span style="color:#f92672">&lt;/name&gt;</span>
+        <span style="color:#f92672">&lt;url&gt;</span>http://172.27.234.197:8082/nexus3/repository/maven-snapshots<span style="color:#f92672">&lt;/url&gt;</span>
+    <span style="color:#f92672">&lt;/snapshotRepository&gt;</span>
+    <span style="color:#f92672">&lt;/distributionManagement&gt;</span>
+    ...
+<span style="color:#f92672">&lt;/project&gt;</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>方案二：</p>
+<ul>
+<li>
+<p>servers&amp;mirrors参考方案一</p>
+</li>
+<li>
+<p>repositories&amp;pluginRepositories&amp;distributeManagement</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;project&gt;</span>
+    ...
+    <span style="color:#f92672">&lt;repositories&gt;</span>
+        <span style="color:#f92672">&lt;repository&gt;</span>
+            <span style="color:#f92672">&lt;id&gt;</span>dev2-nexus3<span style="color:#f92672">&lt;/id&gt;</span>
+            <span style="color:#f92672">&lt;name&gt;</span>dev2 mirror server<span style="color:#f92672">&lt;/name&gt;</span>
+            <span style="color:#f92672">&lt;url&gt;</span>http://172.27.234.197:8082/nexus3/repository/maven-public<span style="color:#f92672">&lt;/url&gt;</span>
+            <span style="color:#f92672">&lt;releases&gt;</span>
+                <span style="color:#f92672">&lt;enabled&gt;</span>true<span style="color:#f92672">&lt;/enabled&gt;</span>
+            <span style="color:#f92672">&lt;/releases&gt;</span>
+            <span style="color:#f92672">&lt;snapshots&gt;</span>
+                <span style="color:#f92672">&lt;enabled&gt;</span>true<span style="color:#f92672">&lt;/enabled&gt;</span>
+                <span style="color:#f92672">&lt;updatePolicy&gt;</span>always<span style="color:#f92672">&lt;/updatePolicy&gt;</span>
+            <span style="color:#f92672">&lt;/snapshots&gt;</span>
+        <span style="color:#f92672">&lt;/repository&gt;</span>
+    <span style="color:#f92672">&lt;/repositories&gt;</span>
+    <span style="color:#f92672">&lt;pluginRepositories&gt;</span>
+        <span style="color:#f92672">&lt;pluginRepository&gt;</span>
+            <span style="color:#f92672">&lt;id&gt;</span>dev2-nexus3<span style="color:#f92672">&lt;/id&gt;</span>
+            <span style="color:#f92672">&lt;name&gt;</span>dev2 mirror server<span style="color:#f92672">&lt;/name&gt;</span>
+            <span style="color:#f92672">&lt;url&gt;</span>http://172.27.234.197:8082/nexus3/repository/maven-public<span style="color:#f92672">&lt;/url&gt;</span>
+            <span style="color:#f92672">&lt;releases&gt;</span>
+                <span style="color:#f92672">&lt;enabled&gt;</span>true<span style="color:#f92672">&lt;/enabled&gt;</span>
+            <span style="color:#f92672">&lt;/releases&gt;</span>
+            <span style="color:#f92672">&lt;snapshots&gt;</span>
+                <span style="color:#f92672">&lt;enabled&gt;</span>true<span style="color:#f92672">&lt;/enabled&gt;</span>
+            <span style="color:#f92672">&lt;/snapshots&gt;</span>
+        <span style="color:#f92672">&lt;/pluginRepository&gt;</span>
+    <span style="color:#f92672">&lt;/pluginRepositories&gt;</span>
+    <span style="color:#f92672">&lt;distributionManagement&gt;</span>
+        <span style="color:#f92672">&lt;repository&gt;</span>
+            <span style="color:#f92672">&lt;id&gt;</span>dev2-nexus3<span style="color:#f92672">&lt;/id&gt;</span>
+            <span style="color:#f92672">&lt;name&gt;</span>release repository for deployment<span style="color:#f92672">&lt;/name&gt;</span>
+            <span style="color:#f92672">&lt;url&gt;</span>http://172.27.234.197:8082/nexus3/repository/maven-releases<span style="color:#f92672">&lt;/url&gt;</span>
+        <span style="color:#f92672">&lt;/repository&gt;</span>
+        <span style="color:#f92672">&lt;snapshotRepository&gt;</span>
+            <span style="color:#f92672">&lt;id&gt;</span>dev2-nexus3<span style="color:#f92672">&lt;/id&gt;</span>
+            <span style="color:#f92672">&lt;name&gt;</span>snapshotRepository repository for deployment<span style="color:#f92672">&lt;/name&gt;</span>
+            <span style="color:#f92672">&lt;url&gt;</span>http://172.27.234.197:8082/nexus3/repository/maven-snapshots<span style="color:#f92672">&lt;/url&gt;</span>
+        <span style="color:#f92672">&lt;/snapshotRepository&gt;</span>
+    <span style="color:#f92672">&lt;/distributionManagement&gt;</span>
+    ...
+<span style="color:#f92672">&lt;/project&gt;</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h3 id="下载与部署">下载与部署</h3>
+<ul>
+<li>
+<p>下载</p>
+<p><code>mvn compile</code>既触发下载缺失的组件</p>
+</li>
+<li>
+<p>上传</p>
+<p><code>mvn deploy</code>触发上传私服</p>
+</li>
+</ul>
+<h3 id="相关命令">相关命令</h3>
+<ul>
+<li>
+<p>清理本地.m2仓库未完成的下载</p>
+<ul>
+<li>
+<p>windows：将脚本保存在.m2目录下，如clean.bat</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">@<span style="color:#66d9ef">echo</span> off
+<span style="color:#75715e">rem</span>
+
+<span style="color:#75715e">rem repository path</span>
+<span style="color:#66d9ef">set</span> REPOSITORY_PATH=./repository
+<span style="color:#75715e">rem searching</span>
+<span style="color:#66d9ef">for</span> <span style="color:#66d9ef">/f</span> <span style="color:#e6db74">&#34;delims=&#34;</span> <span style="color:#ae81ff">%%</span>i <span style="color:#66d9ef">in</span> (<span style="color:#e6db74">&#39;dir /b /s &#34;</span>%REPOSITORY_PATH%<span style="color:#e6db74">\*lastUpdated*&#34;&#39;</span>) <span style="color:#66d9ef">do</span> (
+    <span style="color:#66d9ef">echo</span> <span style="color:#ae81ff">%%</span>i
+    <span style="color:#66d9ef">del</span> /s /q <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">%%</span><span style="color:#e6db74">i&#34;</span>
+)
+<span style="color:#75715e">rem finished work</span>
+<span style="color:#66d9ef">pause</span>
+</code></pre></div></li>
+<li>
+<p>linux</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+find . -name <span style="color:#e6db74">&#34;*.lastUpdated*&#34;</span> -print -exec rm -rf <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+or
+find . -name <span style="color:#e6db74">&#34;*.lastUpdated*&#34;</span> -print | xargs rm -rf
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>从本地仓库中，清理某个项目中pom文件中指定的依赖</p>
+<pre><code class="language-she" data-lang="she">mvn dependency:purge-local-repository
+</code></pre></li>
+</ul>
+<h3 id="其他建议">其他建议</h3>
+<p>项目开发阶段中有自己开发的组件，需要使用snapshots，正式发布第一版本后，要使用releases，依此迭代循环。</p>
+<h2 id="npm">Npm</h2>
+<h3 id="配置-1">配置</h3>
+<ul>
+<li>
+<p>step1:</p>
+<p><code>npm config set registry http://172.27.234.197:8082/nexus3/repository/npm-public</code></p>
+</li>
+<li>
+<p>step2:</p>
+<p><code>npm adduser --registry=http://172.27.234.197:8082/nexus3/repository/npm-public</code></p>
+<p>按照提示输入<code>dev2</code>和<code>Dev2Dev2</code>，邮箱输入<code>abc@dev2.com</code>，或者其他都可以（第一次写的邮箱，后续就会使用这个email)，如果忘记，可以将~/.npmrc清空，重新执行step1、step2</p>
+</li>
+</ul>
+<h3 id="下载与部署-1">下载与部署</h3>
+<ul>
+<li>
+<p>下载</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install moduleName <span style="color:#75715e"># 安装模块到项目目录下npm install -g moduleName # 将模块安装到全局，具体安装到哪个位置，要看npm config get prefix的结果npm install --save|-S moduleName # --save 的意思是将模块安装到项目目录下，并在package文件的dependencies节点写入依赖npm install --save-dev|-D moduleName # --save-dev 的意思是将模块安装到项目目录下，并在package文件的devDependencies节点写入依赖</span>
+</code></pre></div><ul>
+<li>npm install xx -g
+<ul>
+<li>安装模块到全局，不会在项目node_modules目录中保存模块包</li>
+<li>不会将模块依赖写入devDependencies或dependencies 节点</li>
+<li>运行 npm install 初始化项目时不会下载模块</li>
+<li>可以在控制台运行全局组件</li>
+</ul>
+</li>
+<li>npm install xx
+<ul>
+<li>会把xx包安装到项目node_modules目录中</li>
+<li>不会修改package.json</li>
+<li>之后运行npm install命令时，不会自动安装xx</li>
+</ul>
+</li>
+<li>npm install xx &ndash;save
+<ul>
+<li>会把xx包安装到项目node_modules目录中</li>
+<li>会在package.json的dependencies属性下添加xx</li>
+<li>之后运行npm install命令时，会自动安装xx到node_modules目录中</li>
+<li>之后运行npm install &ndash;production或者注明NODE_ENV变量值为production时，会自动安装xx到node_modules目录中</li>
+</ul>
+</li>
+<li>npm install xx &ndash;save-dev
+<ul>
+<li>会把xx包安装到项目node_modules目录中</li>
+<li>会在package.json的devDependencies属性下添加xx</li>
+<li>之后运行npm install命令时，会自动安装xx到node_modules目录中</li>
+<li>之后运行npm install –production或者注明NODE_ENV变量值为production时，不会自动安装xx到node_modules目录中</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>部署</p>
+<p>因为OSS版本不支持直接publish到group仓库，因此需要按照以下步骤执行，注意registry是http://172.27.234.197:8082/nexus3/repository/npm-hosted</p>
+<ul>
+<li>
+<p><code>npm adduser --registry=http://172.27.234.197:8082/nexus3/repository/npm-hosted</code></p>
+</li>
+<li>
+<p>修改package.json，添加</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    <span style="color:#e6db74">&#34;publishConfig&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {    <span style="color:#f92672">&#34;registry&#34;</span>: <span style="color:#e6db74">&#34;http://172.27.234.197:8082/nexus3/repository/npm-hosted&#34;</span>    }
+</code></pre></div></li>
+<li>
+<p>执行 <code>npm publish</code>就可以发布到npm-hosted仓库，如果不修改package.json，每次需要执行<code>npm publish --registry=http://172.27.234.197:8082/nexus3/repository/npm-hosted</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="pypi">Pypi</h2>
+<h3 id="配置-2">配置</h3>
+<p>要特别注意的是，index是在<code>PYPI-PUBLIC</code>之后添加PYPI，INDEX-URL是在<code>PYPI-PUBLIC</code>之后添加simple，否则不能正常工作。配置文件的位置如下：</p>
+<ul>
+<li>windows：%HOMEPATH%/pip/pip.ini</li>
+<li>linux：~/.pip/pip.conf</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">[global]index</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">http://172.27.234.197:8082/nexus3/repository/pypi-public/pypiindex-url = http://172.27.234.197:8082/nexus3/repository/pypi-public/simpletrusted-host = 172.27.234.197</span>
+</code></pre></div><h3 id="下载与部署-2">下载与部署</h3>
+<ul>
+<li>
+<p>下载</p>
+<p>执行pip install xx的时候，会提示输入用户名和密码，请输入<code>dev2</code>和<code>Dev2Dev2</code></p>
+</li>
+<li>
+<p>部署</p>
+<ul>
+<li>
+<p>安装twine</p>
+<p><code>pip install twine</code></p>
+</li>
+<li>
+<p>修改.pypirc</p>
+<ul>
+<li>
+<p>windows：%homepath%/.pypirc</p>
+</li>
+<li>
+<p>linux：~/.pypirc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">[distutils]index-servers</span> <span style="color:#f92672">=</span>    <span style="color:#e6db74">pypi    nexus[pypi]repository=http://172.27.234.197:8082/nexus3/repository/pypi-public/pypiusername=dev2password=Dev2Dev2[nexus]repository=http://172.27.234.197:8082/nexus3/repository/pypi-hostedusername=dev2password=Dev2Dev2</span>
+</code></pre></div></li>
+<li>
+<p>工程中新建setup.py文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sysif sys.version_info <span style="color:#f92672">&lt;</span> (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">7</span>):    <span style="color:#66d9ef">print</span>(sys<span style="color:#f92672">.</span>stderr, <span style="color:#e6db74">&#34;{}: need Python 2.7 or later.&#34;</span><span style="color:#f92672">.</span>format(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">0</span>]))    <span style="color:#66d9ef">print</span>(sys<span style="color:#f92672">.</span>stderr, <span style="color:#e6db74">&#34;Your Python is {}&#34;</span><span style="color:#f92672">.</span>format(sys<span style="color:#f92672">.</span>version))    sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">from</span> setuptools <span style="color:#f92672">import</span> setup, find_packagessetup(    name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;testnexus&#34;</span>,    version<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.0.0&#34;</span>,    license<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;BSD&#34;</span>,    description<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;A python library adding a json log formatter&#34;</span>,    package_dir<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;&#39;</span>: <span style="color:#e6db74">&#39;src&#39;</span>},    packages<span style="color:#f92672">=</span>find_packages(<span style="color:#e6db74">&#34;src&#34;</span>, exclude<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tests&#34;</span>),    install_requires<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;setuptools&#34;</span>, <span style="color:#e6db74">&#34;thrift==0.10.0&#34;</span>, <span style="color:#e6db74">&#34;requests &gt;= 2.13.0&#34;</span>, <span style="color:#e6db74">&#34;urllib3 &gt;= 1.25.3&#34;</span>],    classifiers<span style="color:#f92672">=</span>[        <span style="color:#e6db74">&#39;Development Status :: 3 - Alpha&#39;</span>,        <span style="color:#e6db74">&#39;Intended Audience :: Developers&#39;</span>,        <span style="color:#e6db74">&#39;License :: OSI Approved :: BSD License&#39;</span>,        <span style="color:#e6db74">&#39;Operating System :: OS Independent&#39;</span>,        <span style="color:#e6db74">&#39;Programming Language :: Python&#39;</span>,        <span style="color:#e6db74">&#39;Programming Language :: Python :: 2&#39;</span>,        <span style="color:#e6db74">&#39;Programming Language :: Python :: 2.7&#39;</span>,        <span style="color:#e6db74">&#39;Programming Language :: Python :: 3&#39;</span>,        <span style="color:#e6db74">&#39;Programming Language :: Python :: 3.6&#39;</span>,        <span style="color:#e6db74">&#39;Programming Language :: Python :: 3.7&#39;</span>,        <span style="color:#e6db74">&#39;Programming Language :: Python :: 3.8&#39;</span>,        <span style="color:#e6db74">&#39;Programming Language :: Python :: 3.9&#39;</span>,        <span style="color:#e6db74">&#39;Topic :: System :: Logging&#39;</span>,    ])
+</code></pre></div></li>
+<li>
+<p>安装</p>
+<p><code>python setup.py install</code></p>
+</li>
+<li>
+<p>生成压缩包</p>
+<p><code>python setup.py sdist</code></p>
+</li>
+<li>
+<p>上传nexus</p>
+<p><code>twine upload -r nexus dist/*</code></p>
+</li>
+<li>
+<p>references</p>
+<ul>
+<li><a href="https://packaging.python.org/tutorials/packaging-projects/#setup-py">https://packaging.python.org/tutorials/packaging-projects/#setup-py</a></li>
+<li><a href="https://twine.readthedocs.io/en/latest/">https://twine.readthedocs.io/en/latest/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="相关说明">相关说明</h3>
+<ul>
+<li>
+<p>.pypirc和pip.ini(pip.conf)的区别</p>
+<p>.pypirc是多个工具使用的配置文件，它包含有关发布包时访问特定pypi索引服务器的配置，pip并不使用这个文件。举个栗子，easy_install、twine都会读取.pypirc文件的配置。而pip.ini(pip.conf)是pip读取的配置文件，同时pip也不发布组件。</p>
+</li>
+<li>
+<p>pip中&ndash;index和&ndash;index-url的区别</p>
+<ul>
+<li>
+<p>&ndash;index仅用于pip search命令，对于https://pypi.org这个镜像地址，index的地址需要在后面添加pypi，也就是https://pypi.org/pypi</p>
+</li>
+<li>
+<p>&ndash;index-url是与安装包相关的地址，比如说pip install、pip download、pip list、pip wheel），URL必须指向PEP 503 Simple Repository API位置，如果镜像为https://pypi.org，index-url需要在后面添加simple，https://pypi.org/simple</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="docker">Docker</h2>
+<h3 id="配置-3">配置</h3>
+<ul>
+<li>
+<p>方案一：证书模式</p>
+<ul>
+<li>
+<p>修改hosts</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">echo <span style="color:#e6db74">&#34;172.27.234.197 dev2.docker&#34;</span> &gt;&gt; /etc/hostsmkdir -p /etc/docker/certs.d/dev2.docker
+</code></pre></div></li>
+<li>
+<p>外网：通过github将root.crt文件下载后，放置在<code>/etc/docker/certs.d/dev2.docker</code>目录下</p>
+<ul>
+<li>访问<code>https://github.com/simahao/lily/tree/main/devops/nexus/out/root.crt</code></li>
+<li>通过github提供的raw按钮，点击右键下载证书文件</li>
+<li>将root.crt文件放置在<code>/etc/docker/certs.d/dev2.docker</code>目录下</li>
+</ul>
+</li>
+<li>
+<p>内网：gitea访问zhanghao/lily项目，获取root.crt文件</p>
+</li>
+<li>
+<p>执行以下命令，相关信息会保存在~/.docker/config.json</p>
+<pre><code class="language-shel" data-lang="shel">docker login -u dev2 -p Dev2Dev2 dev2.docker
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>方案二：可以通过修改/etc/docker/daemon.json文件，添加&quot;insecure-registries”配置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{    <span style="color:#f92672">&#34;insecure-registries&#34;</span>: [<span style="color:#960050;background-color:#1e0010">dev</span><span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">.docker</span>]}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl daemon-reloadsystemctl restart docker
+</code></pre></div></li>
+<li>
+<p>执行以下命令，相关信息会保存在~/.docker/config.json</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker login -u dev2 -p Dev2Dev2 dev2.docker
+</code></pre></div></li>
+</ul>
+<h3 id="下载与部署-3">下载与部署</h3>
+<ul>
+<li>
+<p>下载</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker pull dev2.docker/component_name
+</code></pre></div></li>
+<li>
+<p>部署</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 制作docker镜像xxxxdocker login -u dev2 -p Dev2Dev2 dev2.dockerdocker tag component_name dev2.docker/component_namedocker push dev2.docker/component_name</span>
+</code></pre></div></li>
+</ul>
+<h3 id="相关命令-1">相关命令</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#  查看imagesdocker images# 删除imagedocker rmi xxx</span>
+</code></pre></div><h2 id="conda">Conda</h2>
+<h3 id="配置-4">配置</h3>
+<ul>
+<li>window：%homepath%/.condarc</li>
+<li>linux：~/.condarc</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">channels:  - defaultsdefault_channels:  - http://dev2:Dev2Dev2@172.27.234.197:8082/nexus3/repository/conda-publicshow_channel_urls: true</span>
+</code></pre></div><h3 id="下载与部署-4">下载与部署</h3>
+<ul>
+<li>
+<p>下载</p>
+<p>conda install xx</p>
+</li>
+<li>
+<p>部署</p>
+<p>conda-proxy不支持部署</p>
+</li>
+</ul>
+<h3 id="相关命令-2">相关命令</h3>
+<p>清理本地环境下的包，再从proxy下载</p>
+<pre><code class="language-she" data-lang="she">conda clean -hconda clean -[apt]a: allp: packaget: tarballs
+</code></pre><h2 id="nexus配置">nexus配置</h2>
+<h3 id="核心概念">核心概念</h3>
+<p>nexus为大部分仓库提供了hosted、proxy、group模型，基本操作是建立hosted、proxy仓库后，通过group仓库聚合hosted和proxy仓库。</p>
+<ul>
+<li>
+<p>hosted</p>
+<p>内建的私服，可以是snapshots、releases等</p>
+</li>
+<li>
+<p>proxy</p>
+<p>代理服务器，或者叫做加速镜像服务器，针对不同的仓库，国内一般都有对应的镜像地址</p>
+</li>
+<li>
+<p>group</p>
+<p>group仓库是聚合仓库，可以将hosted和proxy聚合在一起，并对客户端统一暴露，不过group是否支持推送，需要查看nexus oss说明，比如说npm的group就不支持直接publish组件</p>
+</li>
+</ul>
+<h3 id="proxy镜像地址https">proxy镜像地址(https)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">proxy</th>
+<th style="text-align:left">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">maven-proxy</td>
+<td style="text-align:left"><a href="https://maven.aliyun.com/nexus/content/groups/public">https://maven.aliyun.com/nexus/content/groups/public</a></td>
+</tr>
+<tr>
+<td style="text-align:left">npm-proxy</td>
+<td style="text-align:left"><a href="https://registry.npmjs.org/">https://registry.npmjs.org/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">pypi-proxy</td>
+<td style="text-align:left"><a href="https://mirrors.aliyun.com/pypi/">https://mirrors.aliyun.com/pypi/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">conda-proxy</td>
+<td style="text-align:left"><a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</a></td>
+</tr>
+<tr>
+<td style="text-align:left">docker-proxy</td>
+<td style="text-align:left"><a href="https://fbiqru8i.mirror.aliyuncs.com">https://fbiqru8i.mirror.aliyuncs.com</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="docker配置">docker配置</h3>
+<p>禁止匿名用户执行pull功能之后，因为docker操作本身需要SSL，nexus3提供了两种方案，一种是利用nginx反向代理docker仓库的http端口，另外一种是利用nexus3自身的SSL功能配置。下面是利用nginx的配置方案。</p>
+<ul>
+<li>
+<p>建立三个docker的仓库。</p>
+<ul>
+<li>
+<p>docker-proxy</p>
+<p>Docker Index需要选择Use Docker Hub选项，否则pull命令找不到对应组件的版本</p>
+</li>
+<li>
+<p>docker-hosted</p>
+<p>设置http connector，比如说9072（不是https connector）</p>
+</li>
+<li>
+<p>docker-public</p>
+<p>设置http connector，比如说9071（不是https connector）</p>
+</li>
+</ul>
+</li>
+<li>
+<p>证书生成</p>
+<p>假设nginx的conf目录在/usr/local/nginx/conf</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /usr/local/nginx/confgit clone https://github.com/Fishdrowned/ssl.gitcd ssl# vim  ca.cnf  修改default_days <span style="color:#f92672">=</span> <span style="color:#ae81ff">7300</span>  20年过期#  vim  gen.root.sh  自定义根证书的名称和组织# dev2.docker是域名，之后docker的客户端需要执行echo <span style="color:#e6db74">&#34;xxx.xxx.xxx.xxx dev2.docker&#34;</span> &gt;&gt; /etc/hosts./gen.cert.sh dev2.docker
+</code></pre></div></li>
+<li>
+<p>nginx配置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini">    <span style="color:#a6e22e">upstream nexus_docker_get {        server 172.27.234.197:9071;    }    upstream nexus_docker_put {        server 172.27.234.197:9072;    }    server {        listen       80;        listen       443 ssl;        server_name  dev2.docker;        #charset koi8-r;        #access_log  logs/host.access.log  main;        ssl_certificate /usr/local/nginx/conf/ssl/out/dev2.docker/dev2.docker.crt;        ssl_certificate_key /usr/local/nginx/conf/ssl/out/dev2.docker/dev2.docker.key.pem;        ssl_protocols TLSv1.1 TLSv1.2;        ssl_ciphers &#39;!aNULL:kECDH+AESGCM:ECDH+AESGCM:RSA+AESGCM:kECDH+AES:ECDH+AES:RSA+AES:&#39;;        ssl_prefer_server_ciphers on;        ssl_session_cache shared:SSL:10m;        client_max_body_size 400m;        set $upstream &#34;nexus_docker_put&#34;;        if ($request_method ~* &#39;GET&#39;) {            set $upstream &#34;nexus_docker_get&#34;;        }        index index.html index.htm index.php;        location / {            proxy_pass http://$upstream;            proxy_set_header Host $host;            proxy_connect_timeout 3600;            proxy_send_timeout 3600;            proxy_read_timeout 3600;            proxy_set_header X-Real-IP $remote_addr;            proxy_buffering off;            proxy_request_buffering off;            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;            proxy_set_header X-Forwarded-Proto http;        }</span>
+</code></pre></div></li>
+</ul>
+<h3 id="tasks">Tasks</h3>
+<p>neuxs3中有几个重要的tasks需要配置，并且tasks之间也有一些依赖关系</p>
+<ul>
+<li>
+<p>Rebuild Maven repository metadata</p>
+<p>这个task重新编译maven-metadata.xml文件，也可以选择性的修正checksums信息(.md5/.sha1)</p>
+</li>
+<li>
+<p>Rebuild repository browse</p>
+<p>这个task根据当前数据库的信息重新构建tree browsing数据</p>
+</li>
+<li>
+<p>Rebuild repository search</p>
+<p>这个task支持hosted和proxy仓库，可以重新构建search index信息</p>
+</li>
+<li>
+<p>Reconcile component database from blob store</p>
+<p>这个task允许通过最邻近的blob store信息恢复丢失的assert/component的metadata。为了避免给search和browse功能造成的影响，在这个task运行完毕后，建议执行Repair - Rebuild repository browse and <em>Repair - Rebuild repository search</em> tasks</p>
+</li>
+<li>
+<p>Compact blob store</p>
+<p>通过UI进行的删除操作都是标记可删除，执行这个task之后，才会进行物理删除释放磁盘空间</p>
+</li>
+</ul>
+<h3 id="2版本到3版本的迁移">2版本到3版本的迁移</h3>
+<ul>
+<li>
+<p>2.x-&gt;2.y</p>
+<p>nexus的运行目录分两部分，一部分是执行环境，一部分是存储相关，2.x-&gt;2.y的upgrade仅仅替换掉执行环境即可，也就是nexus-3.x这个目录（2.y是2的最新版即可）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>nexus3@gardenia a<span style="color:#f92672">]</span>$ tree -L <span style="color:#ae81ff">1</span> ..├── nexus-3.30.1-01└── sonatype-work
+</code></pre></div></li>
+<li>
+<p>2.y-&gt;3.x</p>
+<p>2.y版本之后，具备capbilities功能，添加一个upgrade功能，并启动。3.x同样运行capbilities中的upgrade即可</p>
+<ul>
+<li>
+<p>注意事项</p>
+<ul>
+<li>
+<p>3.x的存储结构由文件原始模式改为blob模式</p>
+</li>
+<li>
+<p>从2.y迁移数据到3.x的时候，迁移数据的模式有三种，分别是</p>
+<ul>
+<li>link：fastest</li>
+<li>file copy：slow</li>
+<li>download：slowest</li>
+</ul>
+</li>
+</ul>
+<p>建议选择重新download模式，file copy可能会遇到非法状态的问题，link方式虽然快，但是需要保持2版本的目录一直存在</p>
+</li>
+</ul>
+</li>
+</ul>
+
         </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col s3 m1">
-      
-        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
-      
-      </div>
-      <div class="col s6 m10 center">&nbsp</div>
-      <div class="col s3 m1">
-      
-        <a class="btn-floating btn-large waves-effect waves-light" href="https://shoy-xy.github.io/post/git/"><i class="mdi-navigation-arrow-forward"></i></a>
-      
-      </div>
-    </div>
+        
 
-  </div>
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/nexus'>Nexus</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
 </div>
 
-  <footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container">
-      
-      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
-      </div>
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://shoy-xy.githubio/">Shoy Hugo Site By Shoy</a>
+        
     </div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="https://shoy-xy.github.io//js/materialize.min.js"></script>
-  <script src="https://shoy-xy.github.io//js/init.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
 
-  </body>
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://shoy-xy.githubio/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://shoy-xy.githubio/post/hugo/" title="Hugo">Hugo</a>
+    </li>
+    
+    <li>
+        <a href="https://shoy-xy.githubio/post/git/" title="Git">Git</a>
+    </li>
+    
+    <li>
+        <a href="https://shoy-xy.githubio/post/nexus/" title="Nexus">Nexus</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://shoy-xy.githubio/categories/hugo/">Hugo (1)</a></li>
+    
+    <li><a href="https://shoy-xy.githubio/categories/%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/">工具文档 (2)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://shoy-xy.githubio/tags/git/">Git</a>
+    
+    <a href="https://shoy-xy.githubio/tags/hugo/">Hugo</a>
+    
+    <a href="https://shoy-xy.githubio/tags/nexus/">Nexus</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://shoy-xy.githubio/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
-

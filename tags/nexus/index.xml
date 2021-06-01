@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nexus on Shoy Hugo Site</title>
+    <link>https://shoy-xy.githubio/tags/nexus/</link>
+    <description>Recent content in Nexus on Shoy Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 31 May 2021 14:25:52 +0800</lastBuildDate><atom:link href="https://shoy-xy.githubio/tags/nexus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nexus</title>
+      <link>https://shoy-xy.githubio/post/nexus/</link>
+      <pubDate>Mon, 31 May 2021 14:25:52 +0800</pubDate>
+      
+      <guid>https://shoy-xy.githubio/post/nexus/</guid>
+      <description>Nexus tutorials  Nexus tutorials  Maven  配置 下载与部署 相关命令 其他建议   Npm  配置 下载与部署   Pypi  配置 下载与部署 相关说明   Docker  配置 下载与部署 相关命令   Conda  配置 下载与部署 相关命令   nexus配置  核心概念 proxy镜像地址(https) docker配置 Tasks 2版本到3版本的迁移      如果你在开发软件时没有私有仓库管理器，那么你会错失机会改变低效的工作方式🤣。如果团队中的每个人都必须访问诸如中央存储库之类的公共仓库才能下载组件，那么这个团队没有获得最单的方式，最高效的方式获取组件😒。如果你的团队没有本地部署组件的地方，那么你们不得不采取妥协的方式（例如将jar文件存储在SCM中）来共享组件😢。Nexus3 OSS可以满足团队的这些需求，私有仓库也是Devops的前提条件✨。
+Nexus3 OSS版本支持的format包含18种：
+ Apt Repositories Bower Repositories CocoaPods Repositories Conan Repositories Conda Repositories Docker Registry Git LFS Repositories Go Repositories Helm Repositories Maven Repositories npm Registry NuGet Repositories p2 Repositories PyPI Repositories R Repositories Raw Repositories RubyGems Repositories Yum Repositories  Nexus3的私有仓库管理类型主要三种：</description>
+    </item>
+    
+  </channel>
+</rss>

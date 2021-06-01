@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Shoy Hugo Site</title>
+    <link>https://shoy-xy.githubio/tags/hugo/</link>
+    <description>Recent content in Hugo on Shoy Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 31 May 2021 14:42:10 +0800</lastBuildDate><atom:link href="https://shoy-xy.githubio/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo</title>
+      <link>https://shoy-xy.githubio/post/hugo/</link>
+      <pubDate>Mon, 31 May 2021 14:42:10 +0800</pubDate>
+      
+      <guid>https://shoy-xy.githubio/post/hugo/</guid>
+      <description>基本使用 安装 到 Hugo Releases 下载适合你的操作系统的版本。
+把 hugo （或者是 Windows 的 hugo.exe） 放到你的 环境变量 PATH 所在的目录，命令行输入命令：hugo version，打印Hugo版本信息则安装成功。
+创建工程 $ hugo new site 工程路径 创建的工程目录结构如下：
+▸ archetypes/  ▸ content/  ▸ data/  ▸ layouts/  ▸ static/  ▸ themes/  config.toml archetypes：文件头模板；
+content：md文件所在文件夹；
+data：变量文件文件夹；
+layouts：页面布局文件文件夹；
+static：静态资源，js、css、images等；
+themes：主题存放路径；
+config：部署配置文件；
+创建文件 $ hugo new post/test.md 在 content 文件夹下创建post/test.md文件，通过命令创建的md有自动生成的投标信息，例如：
++++ date = &amp;#34;2015-01-08T08:36:54-07:00&amp;#34; draft = true title = &amp;#34;about&amp;#34; +++ 使用主题 在Hugo官网或是Github上下载需要使用的Hugo主题，放到theme文件夹内。该文件夹可以放入多个主题，在运行或部署时通过-t指定具体使用哪个。</description>
+    </item>
+    
+  </channel>
+</rss>

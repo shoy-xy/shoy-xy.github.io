@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Site</title>
-    <link>https://shoy-xy.github.io/tags/</link>
-    <description>Recent content in Tags on My New Hugo Site</description>
+    <title>Tags on Shoy Hugo Site</title>
+    <link>https://shoy-xy.githubio/tags/</link>
+    <description>Recent content in Tags on Shoy Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://shoy-xy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 31 May 2021 14:42:10 +0800</lastBuildDate><atom:link href="https://shoy-xy.githubio/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo</title>
+      <link>https://shoy-xy.githubio/tags/hugo/</link>
+      <pubDate>Mon, 31 May 2021 14:42:10 +0800</pubDate>
+      
+      <guid>https://shoy-xy.githubio/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://shoy-xy.githubio/tags/git/</link>
+      <pubDate>Mon, 31 May 2021 14:26:07 +0800</pubDate>
+      
+      <guid>https://shoy-xy.githubio/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nexus</title>
+      <link>https://shoy-xy.githubio/tags/nexus/</link>
+      <pubDate>Mon, 31 May 2021 14:25:52 +0800</pubDate>
+      
+      <guid>https://shoy-xy.githubio/tags/nexus/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

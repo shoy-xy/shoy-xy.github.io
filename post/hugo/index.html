@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Hugo | Shoy Hugo Site</title>
+    <meta property="og:title" content="Hugo - Shoy Hugo Site">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-05-31T14:42:10&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-05-31T14:42:10&#43;08:00'>
+        
+    <meta name="Keywords" content="Java">
+    <meta name="description" content="Hugo">
+        
+    <meta name="author" content="Shoy">
+    <meta property="og:url" content="https://shoy-xy.githubio/post/hugo/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://shoy-xy.githubio/">
+                        Shoy Hugo Site
+                    </a>
+                
+                <p class="description">Java</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://shoy-xy.githubio/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#创建工程">创建工程</a></li>
+    <li><a href="#创建文件">创建文件</a></li>
+    <li><a href="#使用主题">使用主题</a></li>
+    <li><a href="#运行hugo">运行Hugo</a></li>
+    <li><a href="#生成静态文件">生成静态文件</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#hugo命令">Hugo命令</a></li>
+    <li><a href="#hugo配置">Hugo配置</a></li>
+    <li><a href="#工程目录结构">工程目录结构</a>
+      <ul>
+        <li><a href="#data">data</a></li>
+        <li><a href="#archetypes">archetypes</a></li>
+        <li><a href="#content">content</a></li>
+      </ul>
+    </li>
+    <li><a href="#文章概要">文章概要</a></li>
+    <li><a href="#主题">主题</a>
+      <ul>
+        <li><a href="#修改主题">修改主题</a></li>
+        <li><a href="#创建主题">创建主题</a></li>
+        <li><a href="#模板">模板</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Hugo</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年5月31日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/hugo'>Hugo</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <h1 id="基本使用">基本使用</h1>
+<h2 id="安装">安装</h2>
+<p>到 <a href="https://github.com/spf13/hugo/releases">Hugo Releases</a> 下载适合你的操作系统的版本。</p>
+<p>把 <code>hugo</code> （或者是 Windows 的 <code>hugo.exe</code>） 放到你的 环境变量 <code>PATH</code> 所在的目录，命令行输入命令：hugo version，打印Hugo版本信息则安装成功。</p>
+<h2 id="创建工程">创建工程</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">$ hugo <span style="color:#66d9ef">new</span> site 工程路径
+</code></pre></div><p>创建的工程目录结构如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">▸ archetypes/  </span>
+<span style="color:#ae81ff">▸ content/  </span>
+<span style="color:#ae81ff">▸ data/  </span>
+<span style="color:#ae81ff">▸ layouts/  </span>
+<span style="color:#ae81ff">▸ static/   </span>
+<span style="color:#ae81ff">▸ themes/    </span>
+<span style="color:#ae81ff">config.toml</span>
+</code></pre></div><p>archetypes：文件头模板；</p>
+<p>content：md文件所在文件夹；</p>
+<p>data：变量文件文件夹；</p>
+<p>layouts：页面布局文件文件夹；</p>
+<p>static：静态资源，js、css、images等；</p>
+<p>themes：主题存放路径；</p>
+<p>config：部署配置文件；</p>
+<h2 id="创建文件">创建文件</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">$ hugo <span style="color:#66d9ef">new</span> post<span style="color:#f92672">/</span>test<span style="color:#f92672">.</span><span style="color:#a6e22e">md</span>
+</code></pre></div><p>在 <em>content</em> 文件夹下创建post/test.md文件，通过命令创建的md有自动生成的投标信息，例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">+++</span>
+date <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2015-01-08T08:36:54-07:00&#34;</span>
+draft <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;about&#34;</span>
+<span style="color:#f92672">+++</span>
+</code></pre></div><h2 id="使用主题">使用主题</h2>
+<p>在Hugo官网或是Github上下载需要使用的Hugo主题，放到theme文件夹内。该文件夹可以放入多个主题，在运行或部署时通过-t指定具体使用哪个。</p>
+<h2 id="运行hugo">运行Hugo</h2>
+<p>Hugo 包含了内置的高性能 web server 。通过简单的运行 <code>hugo server</code> ， 即可启动运行Hugo程序，这个启动的server可以直接对外提供服务（在访问量不大的情况下）。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">$ hugo server <span style="color:#f92672">-</span>t 主题名称 <span style="color:#f92672">-</span>D
+</code></pre></div><p>其中通过-t指定主题，通过-D参数表示草稿态的文件可见（即md文件头中draft=true）。</p>
+<h2 id="生成静态文件">生成静态文件</h2>
+<p>运行 <code>hugo</code> 命令会在public文件夹下生成网站静态文件，注意运行时 <em>并不会</em> 删除之前生成的文件。这意味着你必须在运行 <code>hugo</code> 命令之前删除你的 <code>public/</code> 目录（或者你通过 <code>-d</code>/<code>--destination</code> 指定的目录）。 不然的话，你可能有运行遗留在生成目录的错误文件的风险（比如草稿或者未来的文章）。</p>
+<p>一个简单的处理方法是使用不同的目录用于开发和部署环境。</p>
+<p>启动一个会生成草稿内容（有助于编辑）的 Server ，指定一个不同的目标目录： <code>dev/</code> 目录</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">$ hugo server <span style="color:#f92672">-</span>wDs <span style="color:#f92672">~/</span>Code<span style="color:#f92672">/</span>hugo<span style="color:#f92672">/</span>docs <span style="color:#f92672">-</span>d dev
+</code></pre></div><p>当内容准备好发布时，使用默认的 <code>public/</code> 目录：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">$ hugo <span style="color:#f92672">-</span>s <span style="color:#f92672">~/</span>Code<span style="color:#f92672">/</span>hugo<span style="color:#f92672">/</span>docs
+</code></pre></div><p>这将防止你不小心发布了还未准备好的内容。</p>
+<p>生成到publish中的文件可以放入Nginx或是apache服务器或是托管到GitHub上。</p>
+<h1 id="高级使用">高级使用</h1>
+<h2 id="hugo命令">Hugo命令</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">$ hugo help</span>
+
+<span style="color:#f92672">Usage</span>:
+  <span style="color:#ae81ff">hugo [flags]</span>
+  <span style="color:#ae81ff">hugo [command]</span>
+
+<span style="color:#f92672">常用命令</span>:
+  <span style="color:#ae81ff">new         新建内容或站点</span>
+  <span style="color:#ae81ff">server      启动一个高兴web服务器</span>
+  <span style="color:#ae81ff">config      打印网站配置</span>
+
+<span style="color:#f92672">标志位</span>:
+  -<span style="color:#ae81ff">b, --baseURL string             root对应的域名,例如：http://spf13.com/</span>
+  -<span style="color:#ae81ff">D, --buildDrafts                包含草稿态文件</span>
+  -<span style="color:#ae81ff">E, --buildExpired               包含过期文件</span>
+  -<span style="color:#ae81ff">F, --buildFuture                包含发表日期是未来时间单位文件</span>
+  -<span style="color:#ae81ff">c, --contentDir string          content文件夹的系统路径</span>
+  -<span style="color:#ae81ff">d, --destination string         输出模板路径</span>
+  -<span style="color:#ae81ff">s, --source string              相对路径的系统路径</span>
+  -<span style="color:#ae81ff">t, --theme strings              指定主题</span>
+</code></pre></div><h2 id="hugo配置">Hugo配置</h2>
+<p>Hugo 需要在源目录查找一个 <code>config.toml</code> 的配置文件。如果这个文件不存在，将会查找 <code>config.yaml</code>，然后是 <code>config.json</code> 。</p>
+<p>这个配置文件是一个整站的配置。它给 Hugo 提供了如何构建站点的方式，比如全局的参数和菜单。</p>
+<p>下面是一个 toml 格式的带了一些默认值的配置文件。 在 <code>[params]</code> 下面的值将会构成模板里的 <code>.Site.Params</code> 变量：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">baseurl</span>: <span style="color:#e6db74">&#34;http://yoursite.example.com/&#34;</span>
+<span style="color:#ae81ff">contentdir = &#34;content&#34;</span>
+<span style="color:#ae81ff">layoutdir = &#34;layouts&#34;</span>
+<span style="color:#ae81ff">publishdir = &#34;public&#34;</span>
+<span style="color:#ae81ff">builddrafts = false</span>
+<span style="color:#ae81ff">baseurl = &#34;http://yoursite.example.com/&#34;</span>
+<span style="color:#ae81ff">canonifyurls = true</span>
+
+[<span style="color:#ae81ff">taxonomies]</span>
+  <span style="color:#ae81ff">category = &#34;categories&#34;</span>
+  <span style="color:#ae81ff">tag = &#34;tags&#34;</span>
+
+[<span style="color:#ae81ff">params]</span>
+  <span style="color:#ae81ff">description = &#34;Tesla&#39;s Awesome Hugo Site&#34;</span>
+  <span style="color:#ae81ff">author = &#34;Nikola Tesla&#34;</span>
+</code></pre></div><p>下面是 Hugo 定义好的变量列表，以及他们的默认值，你可以设置他们：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#75715e"># 原型（文件头）路径</span>
+<span style="color:#f92672">archetypedir</span>:               <span style="color:#ae81ff">默认&#34;archetype&#34;</span>
+<span style="color:#75715e"># root的主路径, 例如：http://spf13.com/</span>
+<span style="color:#f92672">baseURL</span>:                    <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#75715e"># 包含草稿态文件</span>
+<span style="color:#f92672">buildDrafts</span>:                <span style="color:#66d9ef">false</span>
+<span style="color:#75715e"># 包含发布日期未到的文件</span>
+<span style="color:#f92672">buildFuture</span>:                <span style="color:#66d9ef">false</span>
+<span style="color:#75715e"># 所有相对content的相对路径，注意这里只影响相对路径，不影响绝对路径</span>
+<span style="color:#f92672">relativeURLs</span>:               <span style="color:#66d9ef">false</span>
+<span style="color:#f92672">canonifyURLs</span>:               <span style="color:#66d9ef">false</span>
+<span style="color:#75715e"># 配置文件路径（默认 path/config.yaml|json|toml）</span>
+<span style="color:#f92672">config</span>:                     <span style="color:#e6db74">&#34;config.toml&#34;</span>
+<span style="color:#f92672">contentdir</span>:                 <span style="color:#e6db74">&#34;content&#34;</span>
+<span style="color:#f92672">dataDir</span>:                    <span style="color:#e6db74">&#34;data&#34;</span>
+<span style="color:#f92672">defaultExtension</span>:           <span style="color:#e6db74">&#34;html&#34;</span>
+<span style="color:#f92672">defaultLayout</span>:              <span style="color:#e6db74">&#34;post&#34;</span>
+<span style="color:#f92672">disableLiveReload</span>:          <span style="color:#66d9ef">false</span>
+<span style="color:#75715e"># 不构建RSS</span>
+<span style="color:#f92672">disableRSS</span>:                 <span style="color:#66d9ef">false</span>
+<span style="color:#75715e"># 不构建站点地图文件</span>
+<span style="color:#f92672">disableSitemap</span>:             <span style="color:#66d9ef">false</span>
+<span style="color:#f92672">editor</span>:                     <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">footnoteAnchorPrefix</span>:       <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">footnoteReturnLinkContents</span>: <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#75715e"># 谷歌分析追踪ID</span>
+<span style="color:#f92672">googleAnalytics</span>:            <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">languageCode</span>:               <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">layoutdir</span>:                  <span style="color:#e6db74">&#34;layouts&#34;</span>
+<span style="color:#75715e"># 启动日志</span>
+<span style="color:#f92672">log</span>:                        <span style="color:#66d9ef">false</span>
+<span style="color:#75715e"># 日志文件路径（如果设置，则自动启动日志）</span>
+<span style="color:#f92672">logFile</span>:                    <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#75715e"># &#34;yaml&#34;, &#34;toml&#34;, &#34;json&#34;</span>
+<span style="color:#f92672">metaDataFormat</span>:             <span style="color:#e6db74">&#34;toml&#34;</span>
+<span style="color:#f92672">newContentEditor</span>:           <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#75715e"># 不同步文件的修改时间</span>
+<span style="color:#f92672">noTimes</span>:                    <span style="color:#66d9ef">false</span>
+<span style="color:#f92672">paginate</span>:                   <span style="color:#ae81ff">10</span>
+<span style="color:#f92672">paginatePath</span>:               <span style="color:#e6db74">&#34;page&#34;</span>
+<span style="color:#f92672">permalinks</span>:
+<span style="color:#75715e"># 发布文件的系统路径</span>
+<span style="color:#f92672">publishdir</span>:                 <span style="color:#e6db74">&#34;public&#34;</span>
+<span style="color:#75715e"># 代码高亮样式</span>
+<span style="color:#f92672">pygmentsStyle</span>:              <span style="color:#e6db74">&#34;monokai&#34;</span>
+<span style="color:#75715e"># 读取文件相对系统路径</span>
+<span style="color:#f92672">source</span>:                     <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">staticdir</span>:                  <span style="color:#e6db74">&#34;static&#34;</span>
+<span style="color:#75715e"># 显示程序不同步骤的内存和计时</span>
+<span style="color:#f92672">stepAnalysis</span>:               <span style="color:#66d9ef">false</span>
+<span style="color:#75715e"># 使用的主题</span>
+<span style="color:#f92672">theme</span>:                      <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">title</span>:                      <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#75715e"># 如果为true，使用/filename.html 替代 /filename/ 的生成文件路径方式</span>
+<span style="color:#f92672">uglyURLs</span>:                   <span style="color:#66d9ef">false</span>
+<span style="color:#75715e"># 不强制路径为小写</span>
+<span style="color:#f92672">disablePathToLower</span>:         <span style="color:#66d9ef">false</span>
+<span style="color:#75715e"># 如果为true，则自动检测内容中的中文/日文/韩文</span>
+<span style="color:#ae81ff">hasCJKLanguage              false</span>
+<span style="color:#75715e"># 详细日志输出</span>
+<span style="color:#f92672">verbose</span>:                    <span style="color:#66d9ef">false</span>
+<span style="color:#75715e"># verbose logging</span>
+<span style="color:#f92672">verboseLog</span>:                 <span style="color:#66d9ef">false</span>
+<span style="color:#75715e"># 监控文件变化自动重新生成</span>
+<span style="color:#f92672">watch</span>:                      <span style="color:#66d9ef">true</span>
+---
+</code></pre></div><h2 id="工程目录结构">工程目录结构</h2>
+<p>Hugo 使用一个单一的目录用来生成完整的站点。</p>
+<p>源目录的顶层一般有以下一些元素：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">▸ archetypes/</span>
+<span style="color:#ae81ff">▸ content/</span>
+<span style="color:#ae81ff">▸ data/</span>
+<span style="color:#ae81ff">▸ layouts/</span>
+<span style="color:#ae81ff">▸ static/</span>
+<span style="color:#ae81ff">▸ themes/</span>
+  <span style="color:#ae81ff">config.toml</span>
+</code></pre></div><p>archetypes：文件头模板；</p>
+<p>content：md文件所在文件夹；</p>
+<p>data：变量文件文件夹；</p>
+<p>layouts：页面布局文件文件夹；</p>
+<p>static：静态资源，js、css、images等；</p>
+<p>themes：主题存放路径；</p>
+<p>config：部署配置文件；</p>
+<p>一个目录的例子：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">.</span>
+<span style="color:#ae81ff">├── config.toml</span>
+<span style="color:#ae81ff">├── archetypes</span>
+<span style="color:#ae81ff">|   └── default.md</span>
+<span style="color:#ae81ff">├── content</span>
+<span style="color:#ae81ff">|   ├── post</span>
+<span style="color:#ae81ff">|   |   ├── firstpost.md</span>
+<span style="color:#ae81ff">|   |   └── secondpost.md</span>
+<span style="color:#ae81ff">|   └── quote</span>
+<span style="color:#ae81ff">|   |   ├── first.md</span>
+<span style="color:#ae81ff">|   |   └── second.md</span>
+<span style="color:#ae81ff">├── data</span>
+<span style="color:#ae81ff">├── layouts</span>
+<span style="color:#ae81ff">|   ├── _default</span>
+<span style="color:#ae81ff">|   |   ├── single.html</span>
+<span style="color:#ae81ff">|   |   └── list.html</span>
+<span style="color:#ae81ff">|   ├── partials</span>
+<span style="color:#ae81ff">|   |   ├── header.html</span>
+<span style="color:#ae81ff">|   |   └── footer.html</span>
+<span style="color:#ae81ff">|   ├── taxonomies</span>
+<span style="color:#ae81ff">|   |   ├── category.html</span>
+<span style="color:#ae81ff">|   |   ├── post.html</span>
+<span style="color:#ae81ff">|   |   ├── quote.html</span>
+<span style="color:#ae81ff">|   |   └── tag.html</span>
+<span style="color:#ae81ff">|   ├── post</span>
+<span style="color:#ae81ff">|   |   ├── li.html</span>
+<span style="color:#ae81ff">|   |   ├── single.html</span>
+<span style="color:#ae81ff">|   |   └── summary.html</span>
+<span style="color:#ae81ff">|   ├── quote</span>
+<span style="color:#ae81ff">|   |   ├── li.html</span>
+<span style="color:#ae81ff">|   |   ├── single.html</span>
+<span style="color:#ae81ff">|   |   └── summary.html</span>
+<span style="color:#ae81ff">|   ├── shortcodes</span>
+<span style="color:#ae81ff">|   |   ├── img.html</span>
+<span style="color:#ae81ff">|   |   ├── vimeo.html</span>
+<span style="color:#ae81ff">|   |   └── youtube.html</span>
+<span style="color:#ae81ff">|   ├── index.html</span>
+<span style="color:#ae81ff">|   └── sitemap.xml</span>
+<span style="color:#ae81ff">├── themes</span>
+<span style="color:#ae81ff">|   ├── hyde</span>
+<span style="color:#ae81ff">|   └── doc</span>
+<span style="color:#ae81ff">└── static</span>
+    <span style="color:#ae81ff">├── css</span>
+    <span style="color:#ae81ff">└── js</span>
+</code></pre></div><p>这个目录结构告诉了我们一些关于这个站点的信息：</p>
+<ol>
+<li>这个网站打算有两个不同类型的文章内容：<em>posts</em> 和 <em>quotes</em> 。</li>
+<li>它将在文章内容里应用两个不同的分类：<em>categories</em> 和 <em>tags</em> 。</li>
+<li>它将在三种不同的视图里呈现这些内容：列表、摘要和完整的内容。</li>
+</ol>
+<h3 id="data">data</h3>
+<p>除了内置的变量，Hugo还支持自定义变量，这些变量可以在data文件夹下的yaml、json、toml文件中定义。定义的变量也可以用于主题的构建。这些变量呗统一的放入 <code>.Site.Data</code>这个map中，map中的key是根据文件路径.文件名.变量名。</p>
+<h3 id="archetypes">archetypes</h3>
+<p>Hugo引入了内容生成器的概念，通过<code>hugo new</code>命令可以生成文件，并且在文件头部自动携带title、date等信息，如果默认携带的信息不满足要求，可以通过自定义原型文件（archetypes）的方式定义 <em>额外的</em>  头部信息，这样在执行<code>hugo new</code>时即可携带上自定义的头部信息。</p>
+<p>默认的信息可以放在<code>archetype/default.md</code>中，对于不同文件需要不同的头部信息的情况，可以通过在  <code>archetypes</code>中定义文件名称与<code>content</code>下子目录名称一致的方式，为不同的文件夹定制不同的文件头，例如  <code>content/musician</code>对应 <code>archetypes</code>下的 <code>musician.md</code> 。</p>
+<p>多个archetype文件的生效优先级：</p>
+<ul>
+<li>根目录<code>archetypes</code>下文件名称与路径匹配的；</li>
+<li>根目录<code>archetypes</code>下的<code>/default.md</code>；</li>
+<li>主题<code>archetypes</code>下文件名称与路径匹配的；</li>
+<li>主题<code>archetypes</code>下的<code>/default.md</code>；</li>
+<li>Hugo默认的（里面只有title、date）；</li>
+</ul>
+<p>支持格式包括：</p>
+<p>TOML：“+++”；</p>
+<p>YAML：“&mdash;”</p>
+<p>JSON：“{}”</p>
+<p>在文件头中定义的变量可以在模板中通过<code>。Params.key</code>获取，其中key是全小写变量名称。</p>
+<p>常见变量：</p>
+<ul>
+<li>title：文章标题；</li>
+<li>description： 文章描述信息</li>
+<li>date：当前时间</li>
+<li>taxonomies：分类信息，例如categories、tags；</li>
+</ul>
+<p>可选变量：</p>
+<ul>
+<li>aliases：更新路径后的旧路径列表，会生成旧路径到当前文件的链接；</li>
+<li>draft：是否草稿；</li>
+<li>publishdate：发布日期，未来日期不发布；</li>
+</ul>
+<ul>
+<li>type：文章类型，与上面的<a href="#type">type</a>对应；</li>
+<li>isCJKLanguage：是否是中日韩语言；</li>
+<li>weight：排序权重，优先级高于date；</li>
+<li>slug：路径后缀指定；</li>
+<li>url：全路径指定；</li>
+</ul>
+<h3 id="content">content</h3>
+<p>Hugo支持content下文件的任意层嵌套，但是最上层文件夹是特殊的，被称作<code>section</code>。md文件与生成文件的对于关系如下 ：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">.</span>
+<span style="color:#ae81ff">└── content</span>
+    <span style="color:#ae81ff">├── post</span>
+    <span style="color:#ae81ff">|   ├── firstpost.md   // &lt;- http://1.com/post/firstpost/index.html</span>
+    <span style="color:#ae81ff">|   ├── happy</span>
+    <span style="color:#ae81ff">|   |   └── ness.md    // &lt;- http://1.com/post/happy/ness/index.html</span>
+    <span style="color:#ae81ff">|   └── secondpost.md  // &lt;- http://1.com/post/secondpost/index.html</span>
+    <span style="color:#ae81ff">└── quote</span>
+        <span style="color:#ae81ff">├── first.md       // &lt;- http://1.com/quote/first/index.html</span>
+        <span style="color:#ae81ff">└── second.md      // &lt;- http://1.com/quote/second/index.html</span>
+</code></pre></div><p>如果启动或生成时设置了<code>hugo --uglyURLs</code>，那么生成的对于关系如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">.</span>
+<span style="color:#ae81ff">└── content</span>
+    <span style="color:#ae81ff">├── post</span>
+    <span style="color:#ae81ff">|   ├── firstpost.md   // &lt;- http://1.com/post/firstpost.html</span>
+    <span style="color:#ae81ff">|   ├── happy</span>
+    <span style="color:#ae81ff">|   |   └── ness.md    // &lt;- http://1.com/post/happy/ness.html</span>
+    <span style="color:#ae81ff">|   └── secondpost.md  // &lt;- http://1.com/post/secondpost.html</span>
+    <span style="color:#ae81ff">└── quote</span>
+        <span style="color:#ae81ff">├── first.md       // &lt;- http://1.com/quote/first.html</span>
+        <span style="color:#ae81ff">└── second.md      // &lt;- http://1.com/quote/second.html         </span>
+</code></pre></div><p>对于某些文件不想通过默认的方式生成路径的情况，Hugo允许在文件头中定义额外属性达到单独控制文件输出路径的目的，一下几种配置按照优先级从低到高的顺序起作用：</p>
+<p>filename：不在文件头中，但是默认情况下文件名决定了文件的路径；</p>
+<p>slug：定义在文件头中，可以覆盖filename，决定文件路径；</p>
+<p>filepath：生成文件按照md文件的路径（从section那一层开始）生成路径；</p>
+<p>section：及content下的第一层，不可被任何文件头属性修改；</p>
+<p><!-- raw HTML omitted -->type<!-- raw HTML omitted -->：可在文件头中定义，type对应这一套完整的文件，包括：layouts下的typename文件夹，该文件夹下的single.html、list.html，archetypes下的typename.md，他们会和content下typename文件夹下的内容对应生效；</p>
+<p>path：可在文件头中定义，会覆盖文件的真实路径；</p>
+<p>url：可以覆盖上面的所有配置，必须是一个从根路径开始的路径；</p>
+<h2 id="文章概要">文章概要</h2>
+<p>可以通过在文件头中指定<code>Summary</code>变量来设置文章在列表页中的概要内容，同时也可以在文章中通过 &lt;!&ndash;more&ndash;&gt; 标签，截取标签前的内容作为文章概要。 &lt;!&ndash;more&ndash;&gt; 标签的优先级高于手动设置<code>Summary</code>变量。</p>
+<h2 id="主题">主题</h2>
+<h3 id="修改主题">修改主题</h3>
+<p>主题中的静态文件（static文件夹下的内容）、模板文件（layouts文件夹下的内容）、文件头原型文件（archetypes文件夹下的内容）都可以通过在工程工作空间中的对应文件夹的内容进行覆盖。覆盖时注意相对路径保持对应。Hugo在加载主题时会先加载本地工作空间中的内容，然后再去主题文件夹中加载。</p>
+<h3 id="创建主题">创建主题</h3>
+<p>Hugo可以通过命令<code>hugo new theme [name]</code>创建主题，该命令会初始化主题所需的所有文件，在其基础上进行主题的定制，创建的主题包含内容如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">.</span>
+<span style="color:#ae81ff">├── archetypes</span>
+<span style="color:#ae81ff">|   └── default.md</span>
+<span style="color:#ae81ff">├── layouts</span>
+<span style="color:#ae81ff">|   ├── _default</span>
+<span style="color:#ae81ff">|   |   ├── baseof.html</span>
+<span style="color:#ae81ff">|   |   └── list.html</span>
+<span style="color:#ae81ff">|   |   └── single.html</span>
+<span style="color:#ae81ff">|   └── partials</span>
+<span style="color:#ae81ff">|   |   ├── footer.html</span>
+<span style="color:#ae81ff">|   |   └── head.html</span>
+<span style="color:#ae81ff">|   |   └── header.html</span>
+<span style="color:#ae81ff">|   ├── 404.html</span>
+<span style="color:#ae81ff">|   ├── index.html</span>
+<span style="color:#ae81ff">├── static</span>
+<span style="color:#ae81ff">|   ├── css</span>
+<span style="color:#ae81ff">|   ├── js</span>
+<span style="color:#ae81ff">├── theme.toml</span>
+</code></pre></div><p>archetypes：定义在文件头中使用的特殊的key，如有需要可以为每个content type创建对应的archetype文件；</p>
+<p>layouts：提供默认布局模板，可以在其中按照content type或是section自定义模板；</p>
+<ul>
+<li>单体模板：single.html，文件内容展示模板；</li>
+<li>列表模板：list.html文章列表页的模板；</li>
+<li>局部模板：页面局部模板，可以被其他模板引用，方便最小修改、代码复用；</li>
+</ul>
+<p>static：主要存放js、css、图片等静态文件，部署时会被直接拷贝到目标工程；</p>
+<h3 id="模板">模板</h3>
+<h4 id="变量">变量</h4>
+<p>page变量：文件头中的保留变量直接通过.name获取，其余的自定义的可以通过.Params.key获取；</p>
+<p>node变量：分类、list、homepage模板中可以使用的变量，一些保留名称的直接通过.name获取，定义在data文件夹中的可以通过.Data.key获取；</p>
+<p>site变量：全局变量，通过.Site.key获取；</p>
+<h4 id="单体模板">单体模板</h4>
+<p>模板生效顺序：</p>
+<ul>
+<li>/layouts/<code>TYPE</code>-or-<code>SECTION</code>/<code>LAYOUT</code>.html</li>
+<li>/layouts/<code>TYPE</code>-or-<code>SECTION</code>/single.html</li>
+<li>/layouts/_default/single.html</li>
+<li>/themes/<code>THEME</code>/layouts/<code>TYPE</code>-or-<code>SECTION</code>/<code>LAYOUT</code>.html</li>
+<li>/themes/<code>THEME</code>/layouts/<code>TYPE</code>-or-<code>SECTION</code>/single.html</li>
+<li>/themes/<code>THEME</code>/layouts/_default/single.html</li>
+</ul>
+<p>模板样例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ partial &#34;header.html&#34; . }}
+{{ partial &#34;subheader.html&#34; . }}
+{{ $baseurl := .Site.BaseURL }}
+
+&lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>&gt;
+  &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">article</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
+           {{ .Content }}
+        &lt;/<span style="color:#f92672">article</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">section</span>&gt;
+
+&lt;<span style="color:#f92672">aside</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;meta&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">section</span>&gt;
+      &lt;<span style="color:#f92672">h4</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span>&gt; {{ .Date.Format &#34;Mon Jan 2, 2006&#34; }} &lt;/<span style="color:#f92672">h4</span>&gt;
+      &lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wc&#34;</span>&gt; {{ .FuzzyWordCount }} Words &lt;/<span style="color:#f92672">h5</span>&gt;
+    &lt;/<span style="color:#f92672">section</span>&gt;
+    &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;categories&#34;</span>&gt;
+      {{ range .Params.topics }}
+        &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $baseurl }}/topics/{{ . | urlize }}&#34;</span>&gt;{{ . }}&lt;/<span style="color:#f92672">a</span>&gt; &lt;/<span style="color:#f92672">li</span>&gt;
+      {{ end }}
+    &lt;/<span style="color:#f92672">ul</span>&gt;
+    &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tags&#34;</span>&gt;
+      {{ range .Params.tags }}
+        &lt;<span style="color:#f92672">li</span>&gt; &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $baseurl }}/tags/{{ . | urlize }}&#34;</span>&gt;{{ . }}&lt;/<span style="color:#f92672">a</span>&gt; &lt;/<span style="color:#f92672">li</span>&gt;
+      {{ end }}
+    &lt;/<span style="color:#f92672">ul</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span>&gt;
+        {{ if .Prev }}
+          &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;previous&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Prev.Permalink}}&#34;</span>&gt; {{.Prev.Title}}&lt;/<span style="color:#f92672">a</span>&gt;
+        {{ end }}
+        {{ if .Next }}
+          &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;next&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{.Next.Permalink}}&#34;</span>&gt; {{.Next.Title}}&lt;/<span style="color:#f92672">a</span>&gt;
+        {{ end }}
+    &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">aside</span>&gt;
+
+{{ partial &#34;disqus.html&#34; . }}
+{{ partial &#34;footer.html&#34; . }}
+</code></pre></div><h4 id="列表模板">列表模板</h4>
+<p>section列表模板生效顺序：</p>
+<ul>
+<li>/layouts/section/<code>SECTION</code>.html</li>
+<li>/layouts/_default/section.html</li>
+<li>/layouts/_default/list.html</li>
+<li>/themes/<code>THEME</code>/layouts/section/<code>SECTION</code>.html</li>
+<li>/themes/<code>THEME</code>/layouts/_default/section.html</li>
+<li>/themes/<code>THEME</code>/layouts/_default/list.html</li>
+</ul>
+<p>分类列表模板生效顺序：</p>
+<ul>
+<li>/layouts/taxonomy/<code>SINGULAR</code>.html (e.g. <code>/layouts/taxonomy/topic.html</code>)</li>
+<li>/layouts/_default/taxonomy.html</li>
+<li>/layouts/_default/list.html</li>
+<li>/themes/<code>THEME</code>/layouts/taxonomy/<code>SINGULAR</code>.html</li>
+<li>/themes/<code>THEME</code>/layouts/_default/taxonomy.html</li>
+<li>/themes/<code>THEME</code>/layouts/_default/list.html</li>
+</ul>
+<p>模板样例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ partial &#34;header.html&#34; . }}
+{{ partial &#34;subheader.html&#34; . }}
+
+&lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+   &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">h1</span>&gt;
+    {{ range .Data.Pages }}
+        {{ .Render &#34;summary&#34;}}
+    {{ end }}
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">section</span>&gt;
+
+{{ partial &#34;footer.html&#34; . }}
+</code></pre></div><h4 id="主页模板">主页模板</h4>
+<p>模板生效顺序：</p>
+<ul>
+<li>/layouts/index.html</li>
+<li>/layouts/_default/list.html</li>
+<li>/layouts/_default/single.html</li>
+<li>/themes/<code>THEME</code>/layouts/index.html</li>
+<li>/themes/<code>THEME</code>/layouts/_default/list.html</li>
+<li>/themes/<code>THEME</code>/layouts/_default/single.html</li>
+</ul>
+<p>模板样例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no-js&#34;</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en-US&#34;</span> <span style="color:#a6e22e">prefix</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+
+    {{ partial &#34;meta.html&#34; . }}
+
+    &lt;<span style="color:#f92672">base</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Site.BaseURL }}&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;{{ .Site.Title }}&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;canonical&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Permalink }}&#34;</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .RSSlink }}&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alternate&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;application/rss+xml&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Site.Title }}&#34;</span> /&gt;
+
+    {{ partial &#34;head_includes.html&#34; . }}
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+{{ partial &#34;subheader.html&#34; . }}
+
+&lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    {{ range first 10 .Data.Pages }}
+        {{ .Render &#34;summary&#34;}}
+    {{ end }}
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">section</span>&gt;
+
+{{ partial &#34;footer.html&#34; . }}
+</code></pre></div><h4 id="分组展示模板">分组展示模板</h4>
+<p>模板生效顺序：</p>
+<ul>
+<li>/layouts/taxonomy/<code>SINGULAR</code>.terms.html (e.g. <code>/layouts/taxonomy/topic.terms.html</code>)</li>
+<li>/layouts/_default/terms.html</li>
+</ul>
+<p>模板特殊变量：</p>
+<ul>
+<li>.Data.Singular：分组的单数名称；</li>
+<li>.Data.Plural：分组的复数名称；</li>
+<li>.Data.Terms：分组；</li>
+<li>.Data.Terms.Alphabetical：按字母排序；</li>
+<li>.Data.Terms.ByCount：按流行程度排序；</li>
+</ul>
+<p>模板样例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ partial &#34;header.html&#34; . }}
+{{ partial &#34;subheader.html&#34; . }}
+
+&lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">h1</span>&gt;
+
+    &lt;<span style="color:#f92672">ul</span>&gt;
+    {{ $data := .Data }}
+    {{ range $key, $value := .Data.Terms }}
+      &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $data.Plural }}/{{ $key | urlize }}&#34;</span>&gt;{{ $key }}&lt;/<span style="color:#f92672">a</span>&gt; {{ len $value }}&lt;/<span style="color:#f92672">li</span>&gt;
+    {{ end }}
+   &lt;/<span style="color:#f92672">ul</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">section</span>&gt;
+
+{{ partial &#34;footer.html&#34; . }}
+</code></pre></div><h4 id="内容视图">内容视图</h4>
+<p>可复用的、可定制的、可抽取出来的页面中的一部分内容的显示模板。</p>
+<p>模板生效顺序：</p>
+<ul>
+<li>/layouts/<code>TYPE</code>/<code>VIEW</code>.html</li>
+<li>/layouts/_default/<code>VIEW</code>.html</li>
+<li>/themes/<code>THEME</code>/layouts/<code>TYPE</code>/<code>VIEW</code>.html</li>
+<li>/themes/<code>THEME</code>/layouts/_default/<code>view</code>.html</li>
+</ul>
+<p>模板样例（在list中使用）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">h1</span>&gt;
+{{ range .Data.Pages }}
+{{ .Render &#34;summary&#34;}}
+{{ end }}
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">section</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">article</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span>&gt;
+&lt;<span style="color:#f92672">header</span>&gt;
+&lt;<span style="color:#f92672">h2</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{{ .Permalink }}&#39;</span>&gt; {{ .Title }}&lt;/<span style="color:#f92672">a</span>&gt; &lt;/<span style="color:#f92672">h2</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post-meta&#34;</span>&gt;{{ .Date.Format &#34;Mon, Jan 2, 2006&#34; }} - {{ .FuzzyWordCount }} Words &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">header</span>&gt;
+
+{{ .Summary }}
+&lt;<span style="color:#f92672">footer</span>&gt;
+&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{{ .Permalink }}&#39;</span>&gt;&lt;<span style="color:#f92672">nobr</span>&gt;Read more →&lt;/<span style="color:#f92672">nobr</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;/<span style="color:#f92672">footer</span>&gt;
+&lt;/<span style="color:#f92672">article</span>&gt;
+</code></pre></div><p>其中<code>{{ .Render &quot;summary&quot;}}</code>即为使用content view的代码。</p>
+<h4 id="部分模板">部分模板</h4>
+<p>位于<code>/layout/partials</code>下，通过<code>{{ partial &quot;footer.html&quot; . }}</code>命令引用和传参。</p>
+<p>模板样例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no-js&#34;</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en-US&#34;</span> <span style="color:#a6e22e">prefix</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+
+    {{ partial &#34;meta.html&#34; . }}
+
+    &lt;<span style="color:#f92672">base</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Site.BaseURL }}&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt; {{ .Title }} : spf13.com &lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;canonical&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Permalink }}&#34;</span>&gt;
+    {{ if .RSSlink }}&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .RSSlink }}&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alternate&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;application/rss+xml&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Title }}&#34;</span> /&gt;{{ end }}
+
+    {{ partial &#34;head_includes.html&#34; . }}
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</code></pre></div>
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/git/">Git</a></li>
+        
+        <li><a href="/post/nexus/">Nexus</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/hugo'>Hugo</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://shoy-xy.githubio/">Shoy Hugo Site By Shoy</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://shoy-xy.githubio/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://shoy-xy.githubio/post/hugo/" title="Hugo">Hugo</a>
+    </li>
+    
+    <li>
+        <a href="https://shoy-xy.githubio/post/git/" title="Git">Git</a>
+    </li>
+    
+    <li>
+        <a href="https://shoy-xy.githubio/post/nexus/" title="Nexus">Nexus</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://shoy-xy.githubio/categories/hugo/">Hugo (1)</a></li>
+    
+    <li><a href="https://shoy-xy.githubio/categories/%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/">工具文档 (2)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://shoy-xy.githubio/tags/git/">Git</a>
+    
+    <a href="https://shoy-xy.githubio/tags/hugo/">Hugo</a>
+    
+    <a href="https://shoy-xy.githubio/tags/nexus/">Nexus</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://shoy-xy.githubio/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

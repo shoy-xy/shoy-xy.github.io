@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Shoy Hugo Site</title>
+    <link>https://shoy-xy.githubio/tags/git/</link>
+    <description>Recent content in Git on Shoy Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 31 May 2021 14:26:07 +0800</lastBuildDate><atom:link href="https://shoy-xy.githubio/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://shoy-xy.githubio/post/git/</link>
+      <pubDate>Mon, 31 May 2021 14:26:07 +0800</pubDate>
+      
+      <guid>https://shoy-xy.githubio/post/git/</guid>
+      <description>Git学习 [toc]
+一、Git简介 1.1 Git诞生 作者：Linus 原因：BitMover公司要收回Linux社区免费使用BitKeeper的权利（Linux社区有人想破解BitKeeper，被BitMover发现了） 时间：2005年，2周时间写出来的 代码：C语言
+1.2 集中式vs分布式    模式 代表 特点     集中式 CVS、SVN 1、必须中央服务器2、必须联网才能使用3、中央服务器挂了，大家都歇了   分布式 Git、BitKeeper、Bazaar 1、无中央服务器2、每台电脑都是完整仓库3、互相推送各自改动的内容4、互为备份，避免丢失    二、Git安装 2.1 Linux版本安装  查看是否已经安装  可以尝试输入 git，查看是否已经安装了
+$git The program &amp;#39;git&amp;#39; is currently not installed. You can install it by typing: sudo apt-get install git 像上面的命令，有很多Linux会友好地告诉你Git没有安装，还会告诉你如何安装Git。
+ Debian或Ubuntu Linux版本  如果你碰巧用Debian或Ubuntu Linux，通过一条
+sudo apt-get install git 就可以直接完成Git的安装，非常简单。</description>
+    </item>
+    
+  </channel>
+</rss>
