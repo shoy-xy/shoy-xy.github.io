@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Shoy Hugo Site</title>
-    <link>https://shoy-xy.githubio/tags/hugo/</link>
+    <link>https://shoy-xy.github.io/tags/hugo/</link>
     <description>Recent content in Hugo on Shoy Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 31 May 2021 14:42:10 +0800</lastBuildDate><atom:link href="https://shoy-xy.githubio/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 14:42:10 +0800</lastBuildDate><atom:link href="https://shoy-xy.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo</title>
-      <link>https://shoy-xy.githubio/post/hugo/</link>
+      <link>https://shoy-xy.github.io/post/hugo/</link>
       <pubDate>Mon, 31 May 2021 14:42:10 +0800</pubDate>
       
-      <guid>https://shoy-xy.githubio/post/hugo/</guid>
+      <guid>https://shoy-xy.github.io/post/hugo/</guid>
       <description>基本使用 安装 到 Hugo Releases 下载适合你的操作系统的版本。
 把 hugo （或者是 Windows 的 hugo.exe） 放到你的 环境变量 PATH 所在的目录，命令行输入命令：hugo version，打印Hugo版本信息则安装成功。
 创建工程 $ hugo new site 工程路径 创建的工程目录结构如下：

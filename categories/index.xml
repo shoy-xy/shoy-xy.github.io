@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Shoy Hugo Site</title>
-    <link>https://shoy-xy.githubio/categories/</link>
+    <link>https://shoy-xy.github.io/categories/</link>
     <description>Recent content in Categories on Shoy Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 31 May 2021 14:42:10 +0800</lastBuildDate><atom:link href="https://shoy-xy.githubio/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 14:42:10 +0800</lastBuildDate><atom:link href="https://shoy-xy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo</title>
-      <link>https://shoy-xy.githubio/categories/hugo/</link>
+      <link>https://shoy-xy.github.io/categories/hugo/</link>
       <pubDate>Mon, 31 May 2021 14:42:10 +0800</pubDate>
       
-      <guid>https://shoy-xy.githubio/categories/hugo/</guid>
+      <guid>https://shoy-xy.github.io/categories/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>工具文档</title>
-      <link>https://shoy-xy.githubio/categories/%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/</link>
+      <link>https://shoy-xy.github.io/categories/%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/</link>
       <pubDate>Mon, 31 May 2021 14:26:07 +0800</pubDate>
       
-      <guid>https://shoy-xy.githubio/categories/%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/</guid>
+      <guid>https://shoy-xy.github.io/categories/%E5%B7%A5%E5%85%B7%E6%96%87%E6%A1%A3/</guid>
       <description></description>
     </item>
     
