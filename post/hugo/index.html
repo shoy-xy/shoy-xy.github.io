@@ -792,19 +792,19 @@ title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abou
 <li>按字符排序</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span>&gt;
-{{ $data := .Data }}
-{{ range $key, $value := .Data.Taxonomy.Alphabetical }}
-&lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $data.Plural }}/{{ $value.Name | urlize }}&#34;</span>&gt; {{ $value.Name }} &lt;/<span style="color:#f92672">a</span>&gt; {{ $value.Count }} &lt;/<span style="color:#f92672">li</span>&gt;
-{{ end }}
+  {{ $data := .Data }}
+  {{ range $key, $value := .Data.Taxonomy.Alphabetical }}
+    &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $data.Plural }}/{{ $value.Name | urlize }}&#34;</span>&gt; {{ $value.Name }} 			&lt;/<span style="color:#f92672">a</span>&gt; {{ $value.Count }} &lt;/<span style="color:#f92672">li</span>&gt;
+  {{ end }}
 &lt;/<span style="color:#f92672">ul</span>&gt;
 </code></pre></div><ol start="2">
 <li>按流行度排序</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span>&gt;
-{{ $data := .Data }}
-{{ range $key, $value := .Data.Taxonomy.ByCount }}
-&lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $data.Plural }}/{{ $value.Name | urlize }}&#34;</span>&gt; {{ $value.Name }} &lt;/<span style="color:#f92672">a</span>&gt; {{ $value.Count }} &lt;/<span style="color:#f92672">li</span>&gt;
-{{ end }}
+  {{ $data := .Data }}
+  {{ range $key, $value := .Data.Taxonomy.ByCount }}
+    &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $data.Plural }}/{{ $value.Name | urlize }}&#34;</span>&gt; {{ $value.Name }} &lt;/<span style="color:#f92672">a</span>&gt;       {{ $value.Count }} &lt;/<span style="color:#f92672">li</span>&gt;
+  {{ end }}
 &lt;/<span style="color:#f92672">ul</span>&gt;
 </code></pre></div>
         </div>
